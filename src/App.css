@@ -1,0 +1,175 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.wrapper {
+  display: flex;
+}
+
+.main {
+  min-height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  transition: all 0.35s ease-in-out;
+  background-color: #fafbfe;
+}
+
+.discount {
+  background-position: center;
+  background-size: cover;
+  background-image: linear-gradient(109.6deg, rgb(74, 79, 196, 0.8) 11.2%, rgba(74, 79, 196, 0.8) 91.1%), url('./Component/image/background.jpg');
+  color: #FFF;
+}
+
+#sidebar {
+  width: 70px;
+  min-width: 70px;
+  z-index: 1000;
+  transition: all .25s ease-in-out;
+  background-color: #0e2238;
+  display: flex;
+  flex-direction: column;
+}
+.bg{
+  background-color:#F0EAFB !important;
+}
+
+#sidebar.expand {
+  width: 260px;
+  min-width: 260px;
+}
+
+.toggle-btn {
+  background-color: transparent;
+  cursor: pointer;
+  border: 0;
+  padding: 1rem 1.5rem;
+}
+
+.toggle-btn i {
+  font-size: 1.5rem;
+  color: #030303;
+}
+
+.sidebar-logo {
+  margin: auto 0;
+}
+
+.sidebar-logo a {
+  color: #000000;
+  font-size: 1.15rem;
+  font-weight: 600;
+  text-decoration: none;
+  text-align: center;
+}
+
+a.sidebar-link {
+  padding: 7px 15px;
+  color: #000000;
+  display: block;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  border-left: 3px solid transparent;
+  text-decoration: none;
+}
+
+.sidebar-link i {
+  font-size: 1.1rem;
+  margin-right: .75rem;
+}
+
+.sidebar-link span {
+margin: 15px;
+}
+
+a.sidebar-link:hover {
+  background-color: rgba(255, 255, 255, .075);
+  border-left: 3px solid #3b7ddd;
+}
+
+.sidebar-item {
+  position: relative;
+}
+
+#sidebar:not(.expand) .sidebar-logo,
+#sidebar:not(.expand) .sidebar-title .toggle-btn,
+#sidebar:not(.expand) a.sidebar-link span {
+    display: none;
+}
+
+
+.sidebar-item{
+  padding: .75em 0em;
+  display: block;
+  transition: background-color .15s;
+  border-radius: 5px;
+  padding-right: 20px;
+}
+.sidebar-item:hover{
+  background-color: rgba(255, 255, 255, .1);
+  text-decoration: none;
+}
+
+.sidebar-title{
+  display: flex;
+  font-size: 1em;
+  justify-content: space-between;
+  color: #fff;
+}
+.sidebar-title span i{
+  display: inline-block;
+  width: 1.5em;
+}
+.sidebar-title .toggle-btn{
+  cursor: pointer;
+  transition: transform .3s;
+  padding: 0px;
+}
+.sidebar-item.open > .sidebar-title .toggle-btn{
+  transform: rotate(180deg);
+}
+.sidebar-content{
+  padding-top: .25em;
+  height: 0;
+  overflow: hidden;
+}
+.sidebar-item.open > .sidebar-content{
+  height: auto;
+  text-align: left;
+  padding: 10px;
+}

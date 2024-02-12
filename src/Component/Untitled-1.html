@@ -1,0 +1,36 @@
+    <ul className="sidebar-nav">
+          {dashboard.Sidebar.map((item) => (
+            <li className="sidebar-item" key={item.id}>
+              <a
+                href="#"
+                className="sidebar-link"
+                onClick={() => handleOptionClick(item.id)}
+              >
+                {item.icon && (
+                  <img src={item.icon} alt={"customCardIcon"} width={10} />
+                )}{" "}
+                {/* Use the imported SVG icon */}
+                <span>{item.title}</span>
+              </a>
+              {item.options &&
+                activeOption === item.id && ( // Render options only if the current item is active
+                  <ul
+                    className="sidebar-dropdown list-unstyled collapse"
+                    data-bs-parent="#sidebar"
+                  >
+                    {item.options.map((option) => (
+                      <li key={option.id} className="sidebar-item">
+                        <a
+                          href="#"
+                          className={`sidebar-link ${openDropdown === option.id ? 'active' : ''}`}
+                          onClick={() => toggleDropdown(option.id)}
+                        >
+                          {option.title}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+            </li>
+          ))}
+        </ul>

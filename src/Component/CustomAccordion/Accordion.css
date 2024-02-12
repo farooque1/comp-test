@@ -1,0 +1,50 @@
+
+  .heading {
+    font-size: 23px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+  }
+  
+  .accordion {
+    list-style: none;
+    padding: 0px;
+  }
+  
+  .button {
+    font-size: 20px;
+    opacity: 0.7;
+    background-color: #fff;
+    color: #000000;
+    text-align: left;
+    font-weight: 700;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 8px;
+    cursor: pointer;
+    border: none;
+  }
+  
+  .control {
+    font-size: 20px;
+  }
+  
+  .answer {
+    background-color: #f7f7f7;
+    padding: 20px;
+  }
+  
+  /* activate toggle */
+  .accordion_item.active .button {
+    background-color: #fff;
+    font-size: 20px;
+    opacity: 0.7;
+  }
+  .answer_wrapper {
+    height: 0;
+    overflow: hidden;
+    transition: height ease 0.2s;
+  }
+  
